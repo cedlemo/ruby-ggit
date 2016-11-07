@@ -13,7 +13,6 @@
 # You should have received a copy of the GNU Lesser General Public
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-
 module Ggit
   class Loader < GObjectIntrospection::Loader
     private
@@ -28,6 +27,7 @@ module Ggit
     end
 
     def require_libraries
+      require "#{File.expand_path(File.dirname(__FILE__))}/diff"
     end
   end
 end
