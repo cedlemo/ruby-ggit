@@ -1,0 +1,1 @@
+gcc -o walk -I/usr/include/libgit2-glib-1.0 -I/usr/include/gobject-introspection-1.0 -I/usr/lib/libffi-3.2.1/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -lgit2-glib-1.0 -lgit2 -lgio-2.0 -lgirepository-1.0 -lgobject-2.0 -lglib-2.0 walk.c
