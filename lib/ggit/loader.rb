@@ -16,6 +16,16 @@
 module Ggit
   class Loader < GObjectIntrospection::Loader
     private
+
+    def load_function_info(info)
+      case info.name
+      when "init"
+        @init_info = info
+      else
+        super
+      end
+    end
+
     def load_enum_value(value_info, enum_module)
     end
 
@@ -23,6 +33,7 @@ module Ggit
     end
 
     def post_load(repository, namespace)
+      @init_info.invoke([])
       require_libraries
     end
 

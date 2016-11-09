@@ -22,13 +22,6 @@ base_dir = Pathname.new(__FILE__).dirname.dirname.expand_path
 require "#{base_dir}/lib/ggit/loader"
 
 module Ggit
-
-  Gio.init if Gio.respond_to?(:init)
   loader = Loader.new(self)
   loader.load("Ggit")
-
-  init
-  class << self
-    undef_method(:init)
-  end
 end
